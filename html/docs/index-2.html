@@ -190,10 +190,10 @@
                       <div class="" id="menu-1" data-parent="#page-nav">
                         <ul id="toc" class="nav flex-column toc">
                           <li class="nav-item">
-                            <a data-scroll class="nav-link active" href="index.html">Introduction to Network Penetration Testing</a>
+                            <a data-scroll class="nav-link " href="index.html">Introduction to Network Penetration Testing</a>
                           </li>
                           <li class="nav-item">
-                            <a data-scroll class="nav-link" href="index-2.html"">Working with Bind and Reverse Shells</a>
+                            <a data-scroll class="nav-link active" href="index-2.html"">Working with Bind and Reverse Shells</a>
                           </li>
                           <li class="nav-item">
                             <a data-scroll class="nav-link" href="#"">Antimalware Evasion Techniques</a>
@@ -303,79 +303,13 @@
                 
                 <section id="section-1">
                 <div class="epub-source">
-                  <h2 id="_idParaDest-140">Introduction to Network Penetration Testing</h2>
+                  <h2 id="_idParaDest-140">Working with Bind and Reverse Shells</h2>
                   <hr>
                   <div id="_idContainer302">
-                        <p>While many organizations are investing in acquiring the latest security solutions for their organizations, they also need to consider acquiring qualified persons with the right skillset in <a id="_idIndexMarker774"></a>the field of cybersecurity to defend against the next generation of cyberattacks and threats. While some companies will focus on implementing network security solutions such as firewalls, network access controls, and identity access and management systems, they also need to test their network to determine whether there are known and hidden security vulnerabilities. </p>
-                        <p>While having network security appliances within an organization will help reduce the likelihood of a cyberattack or threat, we need to consider the following points:</p>
-                        <ul>
-                          <li>Does the configuration of each device within our organization align with the best practices?</li>
-                          <li>Does the organization use secure network protocols at all times during data transmission between systems across the network?</li>
-                          <li>Are there any devices on the network using default configurations and default user credentials?</li>
-                          <li>Are there any outdated/legacy applications on any hosts on the network?</li>
-                          <li>Are there any devices within the network running unnecessary services?</li>
-                        </ul>
-                        <pre class="language-markup"><code class="language-markup"><span><span class="hljs-tag">&lt;</span><span class="hljs-name">div</span><span class="hljs-tag"> </span><span class="hljs-attr">class</span><span class="hljs-tag">=</span><span class="hljs-string">"Wrap"</span><span class="hljs-tag">&gt;</span>
-                          <span class="hljs-tag">&lt;</span><span class="hljs-name">header</span><span class="hljs-tag"> </span><span class="hljs-attr">class</span><span class="hljs-tag">=</span><span class="hljs-string">"Header"</span><span class="hljs-tag">&gt;&lt;/</span><span class="hljs-name">header</span><span class="hljs-tag">&gt;</span>
-                          <span class="hljs-tag">&lt;</span><span class="hljs-name">div</span><span class="hljs-tag"> </span><span class="hljs-attr">class</span><span class="hljs-tag">=</span><span class="hljs-string">"WrapMiddle"</span><span class="hljs-tag">&gt;</span>
-                              <span class="hljs-tag">&lt;</span><span class="hljs-name">aside</span><span class="hljs-tag"> </span><span class="hljs-attr">class</span><span class="hljs-tag">=</span><span class="hljs-string">"Left"</span><span class="hljs-tag">&gt;&lt;/</span><span class="hljs-name">aside</span><span class="hljs-tag">&gt;</span>
-                              <span class="hljs-tag">&lt;</span><span class="hljs-name">main</span><span class="hljs-tag"> </span><span class="hljs-attr">class</span><span class="hljs-tag">=</span><span class="hljs-string">"Middle"</span><span class="hljs-tag">&gt;&lt;/</span><span class="hljs-name">main</span><span class="hljs-tag">&gt;</span>
-                              <span class="hljs-tag">&lt;</span><span class="hljs-name">aside</span><span class="hljs-tag"> </span><span class="hljs-attr">class</span><span class="hljs-tag">=</span><span class="hljs-string">"Right"</span><span class="hljs-tag">&gt;&lt;/</span><span class="hljs-name">aside</span><span class="hljs-tag">&gt;</span>
-                          <span class="hljs-tag">&lt;/</span><span class="hljs-name">div</span><span class="hljs-tag">&gt;</span>
-                          <span class="hljs-tag">&lt;</span><span class="hljs-name">footer</span><span class="hljs-tag"> </span><span class="hljs-attr">class</span><span class="hljs-tag">=</span><span class="hljs-string">"Footer"</span><span class="hljs-tag">&gt;&lt;/</span><span class="hljs-name">footer</span><span class="hljs-tag">&gt;</span>
-                      <span class="hljs-tag">&lt;/</span><span class="hljs-name">div</span><span class="hljs-tag">&gt;</span>
-                      </span></code></pre>
-                        
-                        <p>Many organizations have a lot of networking devices installed on their network with default configurations. Default configurations are the settings that are pre-configured on a device when it leaves the manufacturer. These default configurations are created to help you connect to the device to perform your initial setup. A network professional will modify the default configurations of the device to ensure secure access methods are configured correctly. As a threat actor, you can perform online research to understand what the default settings on a device are when it's shipped from the vendor. Imagine if Telnet, an insecure network protocol used to remote access, is enabled on a router within an organization that uses perhaps a weak password, such as <code class="literal">password123</code>. This means a threat actor can perform an Nmap scan to determine the running services on the router and maybe try some default credentials. If successful, the threat actor can make adjustments to the device configurations and redirect outbound traffic from the organization to malware-infected servers on the network.</p>
-                        <p>In the field of network engineering, you'll be amazed by the number the packets that are transmitted between host and networking devices. You will be surprised by the number of <a id="_idIndexMarker775"></a>networking protocols that continuously send messages between systems on both the local and remote networks. While many organizations focus on securing their internal network using network security solutions, they also need to consider the need for using secure network protocols for communication over insecure protocols. Imagine that an organization is using Telnet to remotely access systems and devices on their network. If an attacker has already compromised the organization's network and is undetected, the attacker can intercept all communication messages (packets) between systems and capture sensitive and confidential data.</p>
-                        <p>The following screenshot shows a Wireshark capture with Telnet packets:</p>
-                        <div>
-                          <div id="_idContainer258" class="IMG---Figure">
-                            <img src="https://static.packt-cdn.com/products/9781801818933/graphics/image/B17681_07_001.jpg" alt="Figure 7.1 – Telnet packets
-                  ">
-                          </div>
-                        </div>
-                        <p class="figure-caption">Figure 7.1 – Telnet packets</p>
-                        <p>As shown in the preceding screenshot, several Telnet packets are being sent between two hosts on a network. One of the cool things about using Wireshark is its ability to filter traffic for a specific stream of messages between a source and a destination.</p>
-                        <p>The following screenshot shows the results of Wireshark filtering the stream of Telnet messages:</p>
-                        <div>
-                          <div id="_idContainer259" class="IMG---Figure">
-                            <img src="https://static.packt-cdn.com/products/9781801818933/graphics/image/B17681_07_002.jpg" alt="Figure 7.2 – Sensitive data
-                  ">
-                          </div>
-                        </div>
-                        <p class="figure-caption">Figure 7.2 – Sensitive data</p>
-                        <p>As shown in <a id="_idIndexMarker776"></a>the preceding screenshot, Wireshark was able to provide a stream of Telnet messages showing us the conversations between the Telnet client and the Telnet server. Notice that the username and password, as well as the actions that were performed by the user, were captured in plaintext. This is an example of what can occur when using insecure protocols across a network: these protocols send messages in plaintext that are unencrypted by default. </p>
-                        <p>So far, you have learned that while many networks are considered to be secure, it's only a matter of time before a threat actor discovers and exploits a security vulnerability within an organization's network, whether it's a weak password on their wireless network or even physically exposed networking devices. Organizations will hire an external party, such as a penetration tester, who has the skills and resources to simulate a real-world cyberattack based on the rules of engagement (scope) to identify any hidden vulnerabilities that may have been missed or overlooked by the organization's IT team.</p>
-                        <p>The following are some objectives of network penetration testing:</p>
-                        <ul>
-                          <li>Bypassing <a id="_idIndexMarker777"></a>the perimeter firewall</li>
-                          <li>Evading <strong class="bold">Intrusion Detection Systems</strong> (<strong class="bold">IDSes</strong>)/<strong class="bold">Intrusion Prevention Systems</strong> (<strong class="bold">IPSes</strong>)</li>
-                          <li>Testing <a id="_idIndexMarker778"></a>for router and switch misconfiguration</li>
-                          <li>Detecting unnecessarily open network ports and services</li>
-                          <li>Finding sensitive directories and information</li>
-                          <li>Detecting insecure protocols and applications</li>
-                        </ul>
-                        <p>Additionally, each organization and/or person who performs penetration testing services for <a id="_idIndexMarker779"></a>other companies usually have a methodology that works best for the type of penetration testing they are performing on their clients' network. The following are six steps that need to be followed in the network penetration testing process:</p>
-                        <ol>
-                          <li>Information gathering/reconnaissance</li>
-                          <li>Service port scanning</li>
-                          <li>Operating system and service fingerprinting</li>
-                          <li>Vulnerability research</li>
-                          <li>Exploit verification</li>
-                          <li>Reporting</li>
-                        </ol>
-                        <p>At the end of a penetration test with a client organization, the penetration tester has to provide and present the penetration test report, which must be written in a clear and easy-to-understand format. This report is generally used to justify the work that's been performed by the penetration tester, list the security vulnerabilities that were discovered during the allocated time, and show how systems and networks were exploited. It also includes a list of security vulnerabilities, along with their risk ratings through a scoring system, and solutions for how the organization can implement countermeasures to mitigate and prevent future cyberattacks and threats.</p>
-                        <p>During penetration testing, it's important to ensure you document all your findings using screenshots where necessary on a notetaking application. Many free and commercial tools are widely available to penetration testers, such as the following:</p>
-                        <ul>
-                          <li>Cherrytree: <a href="https://www.giuspen.com/cherrytree/" target="_blank">https://www.giuspen.com/cherrytree/</a> </li>
-                          <li>Greenshot: <a href="https://getgreenshot.org/" target="_blank">https://getgreenshot.org/</a></li>
-                          <li>Diagram.net: <a href="https://app.diagrams.net/" target="_blank">https://app.diagrams.net/</a> </li>
-                          <li>Microsoft Office suite: <a href="https://www.office.com/" target="_blank">https://www.office.com/</a> </li>
-                        </ul>
-                        <p>When working <a id="_idIndexMarker780"></a>with notetaking applications, ensure you have a backup of your notes. Should you experience technical issues and you lose your notes, you will have a backup copy. Additionally, ensure your notes and reports are always encrypted to prevent unauthorized access to work, especially the information that's gathered during a penetration test. </p>
-                        <p>Having completed this section, you have learned about the importance of performing network penetration testing. Next, you will learn about how ethical hackers and penetration testers use both bind and reverse shells between their target host system and their attacker machine.</p>
-                        <a id="_idTextAnchor140"></a></div>
+                        <p><strong> Please Note:</strong> This Document has not been created but has identified by the community as an important area of coverage.</p>
+                        <p> We are looking for someone to write about how ethical hackers and penetration testers use both bind and reverse shells between their target host system and their attacker machine.</p> 
+                            <p>If you have this expertise and want to share this knowledge with the community then please click <a href="#">Edit Document</a> and submit a pull-request into the Repository for the Documentation.</p>
+                  </div>
                   </div>
                 </section>
                 <!-- / section 1 -->
@@ -390,21 +324,16 @@
                 <div class="sticky">
                   
                   <div style="margin-bottom:15px;">
-                  <small ><b>Last Updated:</b> 10th October 2022</small>
+                  <small ><b>Last Updated:</b> 22nd May 2021</small>
                   </div>
                   <div class="d-grid gap-2">
                   <button type="button" class="btn btn-outline-dark btn-sm" style="width:100%; margin-bottom: 10px;"><i style="float:left; margin-top: 4px;" class="fa fa-pencil-square-o fa-lg"></i>Edit Document</button>
                   <button type="button" class="btn btn-outline-dark btn-sm" style="width:100%; margin-bottom: 10px;"><i style="float:left; margin-top: 4px;" class="fa fa-plus-square-o fa-lg"></i>Create Document</button>
                   <button type="button" class="btn btn-outline-dark btn-sm" style="width:100%; margin-bottom: 10px;"><i style="float:left; margin-top: 4px;" class="fa fa-commenting-o fa-lg"></i>Provide Feedback</button>
                   </div>
-                  <h5 style="vertical-align: middle; margin-top:35px;">Contributors <span style="vertical-align: middle; margin-left: 5px;" class="badge bg-success">5</span></h5>
+                  <h5 style="vertical-align: middle; margin-top:35px;">Contributors <span style="vertical-align: middle; margin-left: 5px;" class="badge bg-success">1</span></h5>
                   <hr>
-                  <p style="margin-top:10px;margin-bottom:10px;"><img style="margin-right: 15px;" src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">Gary Speed</p>
-                  <p style="margin-top:10px;margin-bottom:10px;"><img style="margin-right: 15px;" src="https://avatars.githubusercontent.com/u/1410338?s=70&v=4g" alt="mdo" width="32" height="32" class="rounded-circle">
-                    Ahren Stevens-Taylor</p>
-                  <p style="margin-top:10px;margin-bottom:10px;"><img style="margin-right: 15px;" src="https://avatars.githubusercontent.com/u/18389496?s=64&v=4" alt="mdo" width="32" height="32" class="rounded-circle">Ronit Rajput</p>
                   <p style="margin-top:10px;margin-bottom:10px;"><img style="margin-right: 15px;" src="https://avatars.githubusercontent.com/u/12611956?s=64&v=4" alt="mdo" width="32" height="32" class="rounded-circle">Saurabh Sharma</p>
-                  <p style="margin-top:10px;margin-bottom:10px;"><img style="margin-right: 15px;" src="https://avatars.githubusercontent.com/u/3854776?s=40&v=4" alt="mdo" width="32" height="32" class="rounded-circle">Oli Huggins</p>
 
                   <h5 style="vertical-align: middle; margin-top:25px;">Metadata</h5>
                   
@@ -413,7 +342,7 @@
                     <li class="breadcrumb-item"><a href="#">Cybersecurity</a></li>
                     <li class="breadcrumb-item">Penetration Testing</li>
                   </ol>
-                  <span><strong>Tags:</strong><span style="vertical-align: middle; margin-left: 5px;" class="badge bg-success">Network Penetration Testing</span><span style="vertical-align: middle; margin: 5px;" class="badge bg-success">Kali Linux</span><span style="vertical-align: middle; margin: 5px;" class="badge bg-success">Intrusion Detection Systems</span></span>
+                  <span><strong>Tags:</strong><span style="vertical-align: middle; margin-left: 5px;" class="badge bg-success">Network Penetration Testing</span></span>
                   </div>
                   
                 </div>
